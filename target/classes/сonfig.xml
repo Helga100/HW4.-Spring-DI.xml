@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="classicalMusicPlayer" class="org.example.ClassicalMusicPlayer">
+        <constructor-arg>
+            <list>
+                <bean class="org.example.Song">
+                    <constructor-arg value="The Walz Of the rain" />
+                    <constructor-arg value="Shopen" />
+                </bean>
+                <bean class="org.example.Song">
+                    <constructor-arg value="Le Vent" />
+                    <constructor-arg value="Ennio Morricone" />
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="rockMusicPlayer" class="org.example.RockMusicPlayer">
+        <constructor-arg>
+            <list>
+                <bean class="org.example.Song">
+                    <constructor-arg value="The Ceiling" />
+                    <constructor-arg value="Jaws" />
+                </bean>
+                <bean class="org.example.Song">
+                    <constructor-arg value="Adore life" />
+                    <constructor-arg value="Savages" />
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="musicPlayer" class="org.example.MusicPlayer">
+        <constructor-arg ref="classicalMusicPlayer" />
+        <constructor-arg ref="rockMusicPlayer" />
+    </bean>
+
+</beans>

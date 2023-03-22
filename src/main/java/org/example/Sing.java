@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
 
-
 public interface Sing {
     void sing();
 }
